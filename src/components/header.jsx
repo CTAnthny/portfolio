@@ -1,25 +1,24 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import { Helmet } from 'react-helmet';
+// import { Link } from 'gatsby';
+// import { makeStyles } from '@material-ui/core/styles';
 
-import { Link } from 'gatsby';
+// const useStyles = makeStyles(() => ({
+//   root: {
+//     display: 'flex',
+//   },
+// }));
 
-import { makeStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
+const Header = (props, { children }) => (
+  // const classes = useStyles();
 
-const useStyles = makeStyles(() => ({
-  root: {
-    display: 'flex',
-  },
-}));
-
-const Header = () => {
-  const classes = useStyles();
-
-  return (
-    <div className={classes.root}>
-      <CssBaseline />
-    </div>
-  );
-};
+  // <Helmet className={classes.root}>
+  <Helmet style={{ display: 'flex' }}>
+    <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+    <meta name="description" content={props.description} />
+    <title>{props.title}</title>
+    {children}
+  </Helmet>
+);
 
 export default Header;
