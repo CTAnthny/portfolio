@@ -1,4 +1,5 @@
 /* eslint-disable import/prefer-default-export, react/jsx-filename-extension, import/extensions */
+
 /**
  * Implement Gatsby's Browser APIs in this file.
  *

@@ -9,16 +9,19 @@ import { Helmet } from 'react-helmet';
 //   },
 // }));
 
-const Header = (props, { children }) => (
+const Header = (props, { children }) => {
+  const { title, description } = props;
+  return (
   // const classes = useStyles();
 
-  // <Helmet className={classes.root}>
-  <Helmet style={{ display: 'flex' }}>
-    <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-    <meta name="description" content={props.description} />
-    <title>{props.title}</title>
-    {children}
-  </Helmet>
-);
+    // <Helmet className={classes.root}>
+    <Helmet style={{ display: 'flex' }}>
+      <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+      <meta name="description" content={description} />
+      <title>{title}</title>
+      {children}
+    </Helmet>
+  );
+};
 
 export default Header;
